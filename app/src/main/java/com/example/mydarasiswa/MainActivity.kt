@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import com.example.mydarasiswa.ui.theme.MyDaraSiswaTheme
 import com.example.mydarasiswa.uicontroller.DataSiswaApp
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
