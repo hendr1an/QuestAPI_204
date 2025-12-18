@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyDaraSiswa</string>
+    <string name="entry_siswa">Tambah Siswa</string>
+    <string name="nama">Nama</string>
+    <string name="alamat">Alamat</string>
+    <string name="telpon">Telepon</string>
+    <string name="required_field">Wajib Diisi</string>
+    <string name="btn_submit">Simpan</string>
+    <string name="back">Kembali</string>
+    <string name="loading">Memuat...</string>
+    <string name="loading_failed">Gagal Memuat Data</string>
+    <string name="retry">Coba Lagi</string>
+</resources>
