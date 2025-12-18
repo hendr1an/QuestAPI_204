@@ -17,6 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         // HAPUS enableEdgeToEdge() KARENA SERING BIKIN CRASH COMPILER DI VERSI TERTENTU
 
+
         setContent {
             MyDaraSiswaTheme {
                 // Gunakan Surface sebagai dasar agar lebih stabil
