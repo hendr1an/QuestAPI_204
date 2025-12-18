@@ -22,6 +22,7 @@ fun DataSiswaApp(
     )
 }
 
+
 @Composable
 fun HostNavigasi(
     navController: NavHostController,
