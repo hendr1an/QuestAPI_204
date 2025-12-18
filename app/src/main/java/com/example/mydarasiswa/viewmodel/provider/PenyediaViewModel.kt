@@ -10,6 +10,7 @@ import com.example.mydarasiswa.viewmodel.EntryViewModel
 import com.example.mydarasiswa.viewmodel.HomeViewModel
 
 
+
 fun CreationExtras.aplikasiDataSiswa(): AplikasiDataSiswa =
     (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as AplikasiDataSiswa)
 
