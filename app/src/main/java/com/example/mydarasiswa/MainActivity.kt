@@ -11,16 +11,12 @@ import androidx.compose.ui.Modifier
 import com.example.mydarasiswa.ui.theme.MyDaraSiswaTheme
 import com.example.mydarasiswa.uicontroller.DataSiswaApp
 
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // HAPUS enableEdgeToEdge() KARENA SERING BIKIN CRASH COMPILER DI VERSI TERTENTU
-
-
+        // Kita hapus enableEdgeToEdge() agar compiler tidak crash
         setContent {
             MyDaraSiswaTheme {
-                // Gunakan Surface sebagai dasar agar lebih stabil
                 Surface(
                     modifier = Modifier.fillMaxSize()
                 ) {
