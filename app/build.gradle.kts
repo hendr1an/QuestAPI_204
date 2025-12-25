@@ -2,20 +2,17 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.10"
-
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-    namespace = "com.example.MyDaraSiswa"
-    compileSdk {
-        version = release(36)
-    }
+    namespace = "com.example.mydarasiswa"
+    compileSdk = 34 // Versi Stabil
 
     defaultConfig {
-        applicationId = "com.example.MyDaraSiswa"
+        applicationId = "com.example.mydarasiswa"
         minSdk = 29
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -32,12 +29,13 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
+
+    // BAGIAN KOTLINOPTIONS KITA HAPUS AGAR TIDAK ERROR DI VERSI BARU
+    // Cukup mengandalkan compileOptions di atas.
+
     buildFeatures {
         compose = true
     }
@@ -52,7 +50,27 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.material3)
+
+    // --- BAGIAN INI SAYA UBAH MENJADI ALAMAT LANGSUNG (SUPAYA TIDAK MERAH) ---
+
+    // Navigation & ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
+    implementation("androidx.navigation:navigation-compose:2.8.5")
+
+    // Serialization (JSON)
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+
+    // Retrofit (Internet)
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-kotlinx-serialization:2.11.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    // Icons
+    implementation("androidx.compose.material:material-icons-extended:1.7.6")
+
+    // --------------------------------------------------------------------------
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -60,16 +78,4 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation(libs.lifecycle.viewmodel.compose)
-    implementation(libs.lifecycle.runtime.compose)
-    implementation(libs.navigation.compose)
-    implementation(libs.retrofit.serialization)
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.okhttp)
-    implementation(libs.okhttp.logging)
-    implementation("androidx.compose.material:material-icons-core")
-
-
-    // Library tambahan untuk ikon yang lebih lengkap (termasuk ArrowBack)
-    implementation("androidx.compose.material:material-icons-extended")
 }
